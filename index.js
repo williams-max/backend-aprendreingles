@@ -2,6 +2,9 @@ const express = require('express');
 const server = express();
 const bodyParser = require("body-parser");
 const cors = require('cors');
+const { translate } = require('free-translate');
+
+var texto = " ";
 
 const PORT=process.env.PORT || 4000;
 
@@ -14,11 +17,19 @@ server.use(cors({
 
 const showRoutes = require("./routes/index.js");
 
-server.use("/api", showRoutes(server));
+//server.use("/api", showRoutes(server));
 
+server.get('/api/texto-traducido-ingles', async (req, res) => {
+    texto="hola"
+    const textEnglish = await translate(texto, { to: 'en' });
+    res.send(textEnglish);
+});
 
 server.get("/",(req,res)=> {
     res.send("backend funcionando");
+})
+server.get("/api/hello",(req,res)=> {
+    res.send("hello funcionando");
 })
 
 server.listen(PORT, err => {
