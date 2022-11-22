@@ -1,0 +1,23 @@
+{
+  "name": "backend-aprendreingles",
+  "version": "1.0.0",
+  "description": "back end aprendre ingles implemtado en express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williams-max/backend-aprendreingles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williams-max/backend-aprendreingles/issues"
+  },
+  "homepage": "https://github.com/williams-max/backend-aprendreingles#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
