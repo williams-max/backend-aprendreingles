@@ -19,7 +19,7 @@ const showRoutes = require("./routes/index.js");
 
 //server.use("/api", showRoutes(server));
 
-server.get('/api/texto-traducido-ingles', async (req, res) => {
+server.get('/texto-traducido-ingles', async (req, res) => {
     texto="hola"
     const textEnglish = await translate(texto, { to: 'en' });
     res.send(textEnglish);
