@@ -37,4 +37,3 @@ server.listen(PORT, err => {
     console.log(`> Ready on ${PORT}`);
 });
 
-module.exports = server;
