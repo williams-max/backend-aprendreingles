@@ -21,8 +21,8 @@ const showRoutes = require("./routes/index.js");
 
 server.get('/texto', async (req, res) => {
     texto="hola"
-    const textEnglish = await translate(texto, { to: 'en' });
-    res.send(textEnglish);
+   // const textEnglish = await translate(texto, { to: 'en' });
+    res.send(texto);
 });
 
 server.get("/",(req,res)=> {
