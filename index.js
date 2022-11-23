@@ -19,15 +19,15 @@ const showRoutes = require("./routes/index.js");
 
 //server.use("/api", showRoutes(server));
 
-server.get('/texto', async (req, res) => {
+server.get('/', async (req, res) => {
     texto="hola"
-   // const textEnglish = await translate(texto, { to: 'en' });
-    res.send(texto);
+    const textEnglish = await translate(texto, { to: 'en' });
+    res.send(textEnglish);
 });
-
+/*
 server.get("/",(req,res)=> {
     res.send("backend funcionando");
-})
+})*/
 server.get("/api/hello",(req,res)=> {
     res.send("hello funcionando");
 })
