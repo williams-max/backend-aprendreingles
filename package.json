@@ -5,9 +5,9 @@
   "main": "index.js",
 
   "scripts": {
-    "start": " ./node_modules/.bin/netlify-lambda serve src",
+    "start": "netlify-lambda serve src",
     "start:lambda": "netlify-lambda serve src",
-    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda build src"
+    "build": "netlify-lambda build src"
 
   },
   "repository": {
