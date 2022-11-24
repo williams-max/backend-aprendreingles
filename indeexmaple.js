@@ -37,6 +37,24 @@ server.get('/', async (req, res) => {
       //  next(err);
     }
 });
+
+router.get('/texto', async (req, res) => {
+
+    var texto = "hola"
+  
+    const respuesta =await translate('I speak Chinese!', {from: 'en', to: 'zh-cn'}).then(res => {
+      console.log("texto tradu ", res.text);
+      return res.text;
+      //=> I speak English
+      //  console.log(res.from.language.iso);
+      //=> nl
+    }).catch(err => {
+      console.error(err);
+    });
+  
+    // const textEnglish = await translate(texto, { to: 'en' });
+    res.send("hola");
+  });
 /*
 server.get("/",(req,res)=> {
     res.send("backend funcionando");
