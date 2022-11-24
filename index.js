@@ -3,7 +3,7 @@ const server = express();
 const bodyParser = require("body-parser");
 const cors = require('cors');
 //const { translate } = require('free-translate');
-const translate = require('translate-google')
+//const translate = require('translate-google')
 
 //var texto = " ";
 
@@ -18,13 +18,14 @@ server.use(cors({
 
 const showRoutes = require("./routes/index.js");
 
-//server.use("/api", showRoutes(server));
-
 server.get('/', async (req, res) => {
 
     res.send("funciona");/**/
 });
+server.use("/api", showRoutes(server));
 
+
+/*
 server.get('/texto', async (req, res) => {
 
     var texto = "hola"
@@ -32,20 +33,18 @@ server.get('/texto', async (req, res) => {
     const respuesta =await translate('hola como estas', {to: 'en'}).then(res => {
       console.log("texto tradu ", res);
       return res;
-      //=> I speak English
-      //  console.log(res.from.language.iso);
-      //=> nl
+   
     }).catch(err => {
       console.error(err);
     });
   
-    // const textEnglish = await translate(texto, { to: 'en' });
     res.send(respuesta);
-  });
+  });*/
 /*
 server.get("/",(req,res)=> {
     res.send("backend funcionando");
 })*/
+/*
 server.get("/api/hello", (req, res, next) => {
 
     try {
@@ -55,7 +54,7 @@ server.get("/api/hello", (req, res, next) => {
     } catch (err) {
         next(err);
     }
-})
+})*/
 
 function handleErrors(err, req, res, next) {
     console.log(err);
