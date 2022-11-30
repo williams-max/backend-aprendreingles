@@ -67,7 +67,7 @@ function routes(app) {
             texto: Number(numberC)
         }
       //  fs.writeFileSync('public/dbone.json',dato);
-        fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
+        fs.writeFileSync('https://backend-aprendreingles-ten.vercel.app/public/dbone.json', JSON.stringify(dato));
         res.send(txtReciv.toString());
     });
 
@@ -78,7 +78,7 @@ function routes(app) {
         const dato = {
             contview: Number(contnumber)
         }
-        fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
+       // fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
         //res.send(contnumber.toString());
         res.send("ok");
 
