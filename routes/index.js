@@ -59,7 +59,7 @@ function routes(app) {
 
     });
 
-    router.post('/set-textdbone', async (req, res) => {
+    router.get('/set-textdbone', async (req, res) => {
         const txtReciv = req.body.texto;
         //console.log("texto recibido ",txtReciv)
         const numberC=8;
