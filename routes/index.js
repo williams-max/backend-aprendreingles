@@ -71,6 +71,17 @@ function routes(app) {
         res.send(txtReciv.toString());
     });
 
+    router.post('/set-cont-view', async (req, res) => {
+        console.log("recip ",req.body)
+        const contnumber = req.body.contnumber;
+        console.log("dato recibido ", contnumber)
+        const dato = {
+            contview: Number(contnumber)
+        }
+        fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
+        res.send(contnumber.toString());
+    });
+
     router.get("/movies", (req, res) => {
         res.end("We made it! And it's great");
     });
