@@ -59,10 +59,24 @@ function routes(app) {
 
     });
 
+    router.get('/get-test', async (req, res) => {
+        //let rawdata = fs.readFileSync('/tmp/dbone.json');
+        //let respuesta = JSON.parse(rawdata);
+
+        const os = require('os');
+
+        const respuesta=os.tmpdir()
+        // Display os.tmpdir() value
+        //console.log(os.tmpdir());
+
+        res.send(respuesta);
+
+    });
+
     router.post('/set-textdbone', async (req, res) => {
         const txtReciv = req.body.texto;
         //console.log("texto recibido ",txtReciv)
-        
+
         const dato = {
             texto: txtReciv
         }
