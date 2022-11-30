@@ -67,7 +67,7 @@ function routes(app) {
             texto: Number(numberC)
         }
       //  fs.writeFileSync('public/dbone.json',dato);
-        fs.writeFileSync('/tmp/public/dbone.json', JSON.stringify(dato));
+        fs.writeFileSync('/tmp/dbone.json', JSON.stringify(dato));
         res.send(txtReciv.toString());
     });
 
