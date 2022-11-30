@@ -61,10 +61,10 @@ function routes(app) {
 
     router.post('/set-textdbone', async (req, res) => {
         const txtReciv = req.body.texto;
-        console.log("texto recibido ",txtReciv)
+        //console.log("texto recibido ",txtReciv)
         
         const dato = {
-            texto: txtReciv
+            texto: txtReciv.toString()
         }
       //  fs.writeFileSync('public/dbone.json',dato);
         fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
