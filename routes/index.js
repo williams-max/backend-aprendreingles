@@ -54,7 +54,7 @@ function routes(app) {
     router.get('/get-textdbone', async (req, res) => {
         let rawdata = fs.readFileSync('public/dbone.json');
         let respuesta = JSON.parse(rawdata);
-       
+
         res.send(respuesta);
 
     });
@@ -62,23 +62,28 @@ function routes(app) {
     router.get('/set-textdbone', async (req, res) => {
         const txtReciv = req.body.texto;
         //console.log("texto recibido ",txtReciv)
-        const numberC=8;
+        const numberC = 8;
         const dato = {
             texto: Number(numberC)
         }
-      //  fs.writeFileSync('public/dbone.json',dato);
+        //  fs.writeFileSync('public/dbone.json',dato);
         fs.writeFileSync('/tmp/dbone.json', JSON.stringify(dato));
-        res.send(txtReciv.toString());
+        if (txtReciv == undefined) {
+            res.send("empty");
+        } else {
+            res.send(txtReciv.toString());
+        }
+
     });
 
     router.post('/set-cont-view', async (req, res) => {
-        console.log("recip ",req.body)
+        console.log("recip ", req.body)
         const contnumber = req.body.contnumber;
         console.log("dato recibido ", contnumber)
         const dato = {
             contview: Number(contnumber)
         }
-       // fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
+        // fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
         //res.send(contnumber.toString());
         res.send("ok");
 
