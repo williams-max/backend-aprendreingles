@@ -52,7 +52,7 @@ function routes(app) {
 
     //api for db.json
     router.get('/get-textdbone', async (req, res) => {
-        let rawdata = fs.readFileSync('public/dbone.json');
+        let rawdata = fs.readFileSync('/tmp/dbone.json');
         let respuesta = JSON.parse(rawdata);
 
         res.send(respuesta);
