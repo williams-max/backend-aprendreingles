@@ -2,15 +2,12 @@ const express = require("express");
 const router = express.Router();
 //const { translate } = require('free-translate');
 const translate = require('translate-google')
+const fs = require('fs');
 
 var texto = " ";
 
 function routes(app) {
-/*
-    router.get('/', async (req, res) => {
 
-        res.send("funciona");
-    });*/
     router.post('/recibo-texto', (req, res) => {
         console.log("body ", req.body)
         texto = req.body.texto;
@@ -53,6 +50,25 @@ function routes(app) {
         res.send(respuesta);
     });
 
+    //api for db.json
+    router.get('/get-textdbone', async (req, res) => {
+        let rawdata = fs.readFileSync('public/dbone.json');
+        let respuesta = JSON.parse(rawdata);
+       
+        res.send(respuesta);
+
+    });
+
+    router.post('/set-textdbone', async (req, res) => {
+        const txtReciv = req.body.texto;
+        console.log("texto recibido ",txtReciv)
+        
+        const dato = {
+            texto: txtReciv
+        }
+        fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
+        res.send(txtReciv);
+    });
 
     router.get("/movies", (req, res) => {
         res.end("We made it! And it's great");
