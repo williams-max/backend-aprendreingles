@@ -66,8 +66,9 @@ function routes(app) {
         const dato = {
             texto: txtReciv
         }
+      //  fs.writeFileSync('public/dbone.json',dato);
         fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
-        res.send(txtReciv);
+        res.send(txtReciv.toString());
     });
 
     router.get("/movies", (req, res) => {
