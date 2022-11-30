@@ -79,7 +79,9 @@ function routes(app) {
             contview: Number(contnumber)
         }
         fs.writeFileSync('public/dbone.json', JSON.stringify(dato));
-        res.send(contnumber.toString());
+        //res.send(contnumber.toString());
+        res.send("ok");
+
     });
 
     router.get("/movies", (req, res) => {
